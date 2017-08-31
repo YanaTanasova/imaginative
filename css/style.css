@@ -233,12 +233,14 @@ ul{
 .menu{
 	background: #97455f;
 	border-radius: 4px 4px 0 0;
+	position: relative;
 }
 
 .menu__item{
 	display: inline-block;
 	font-size: .75rem;
 	text-transform: uppercase;
+	text-align: right;
 }
 
 .menu__link{
@@ -252,10 +254,33 @@ ul{
 	border-top-left-radius: 4px;
 }
 
-.menu__link:hover{
+.menu__link:hover, .menu__link:active{
 	color: #fff;
 	text-decoration: none;
 	background: #6a3144;
+}
+
+.menu__checkbox{
+	display: none;
+}
+
+.responsive-btn{
+	display: none;
+	cursor: pointer;
+	margin-bottom: 0;
+	width: 100%;
+	text-align: right;
+	font-size: .75rem;
+	text-transform: uppercase;	
+}
+
+.menu__checkbox:checked ~ .menu__list .menu__item{
+	display: block;
+}
+
+.menu__checkbox:checked ~ .responsive-btn{
+	background: #6a3144;
+	border-radius: 4px 4px 0 0;
 }
 
 /* 2.2 slider */
@@ -267,9 +292,12 @@ ul{
 }
 
 .slider__item{
+	position: relative;
+}
+
+.slider__img{
 	background: #333;
 	height: 350px;
-	position: relative;
 }
 
 .item__size{
@@ -394,13 +422,13 @@ ul{
 	padding-left: 10px;
 }
 
-.features__title{
+.item-title{
 	font-size: 1rem;
 	color: #97455f;
 	margin: 0;
 }
 
-.features__desc{
+.item-desc{
 	font-size: 0.8125rem;
 	color: #999;
 	line-height: 1.4;
@@ -456,11 +484,12 @@ ul{
 	color: #97455f;
 }
 
-/* call to action */
+/* 3. call to action */
 
 .call-to-action-wrap{
 	padding: 0 30px;
 	margin-top: 45px;
+	padding-bottom: 50px;
 }
 
 .call-to-action{
@@ -503,4 +532,126 @@ ul{
 	color: #fff;
 	text-decoration: none;
 	background: #6a3144;
+}
+
+/* 4. footer */
+
+.footer{
+	border-top: 5px solid #d2d2d2;
+	background: #ebebeb;
+	padding-top: 35px;
+}
+
+/* 4.1 footer top */
+.footer-top{
+	padding-bottom: 10px;
+}
+
+.footer-top__title{
+	font-size: 1rem;
+	color: #333;
+	font-weight: normal;
+}
+
+/* 4.1.1 blog-latest */
+
+.blog-latest__list{
+	margin-top: 20px;
+}
+
+.blog-latest__item{
+	font-size: 0;
+	margin-bottom: 30px;
+}
+
+.blog-latest__img{
+	padding: 4px;
+	border: 1px solid #d2d2d2;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.blog-latest__desc-wrap{
+	display: inline-block;
+	width: calc(100% - 105px);
+	padding-left: 20px;
+	vertical-align: top;
+}
+
+.item-desc--blog{
+	line-height: 1.8;
+}
+
+/* 4.1.2 company details */
+
+.company-details__item{
+	margin-top: 15px;
+}
+
+.company-details__text{
+	font-size: .75rem;
+	margin: 4px 0 0 0;
+	color: #999;
+}
+
+.company-details__title{
+	font-weight: bold;
+}
+
+/* 4.1.3 contact us */
+
+.contact-us__input{
+	border: none;
+	font-size: 0.8125rem;
+	font-family: Georgia, serif;
+	color: #989898;
+	border-radius: 4px;
+	width: 100%;
+	padding: 8px 10px;
+	margin-top: 10px;
+}
+
+.contact-us__input--textarea{
+	height: 110px;
+	resize: none;
+}
+
+.contact-us__input:-webkit-input-placeholder {color: #989898;}
+.contact-us__input:-moz-placeholder {color: #989898;}
+.contact-us__input:-ms-input-placeholder {color: #989898;}
+
+.contact-us__btn{
+	font-family: Georgia, serif;
+	color: #fff;
+	font-size: 0.8125rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: #97455f;
+	border-radius: 4px;
+	padding: 8px 12px;
+	border: none;
+	margin-top: 6px;
+	transition: background .2s;
+}
+
+.contact-us__btn:hover, .contact-us__btn:active{
+	background: #6a3144;
+}
+
+/* 4.2 footer bottom */
+
+.footer-bottom{
+	font-size: .75rem;
+	color: #999;
+	padding: 20px 0;
+	border-top: 1px solid #fff;
+	box-shadow: 0 -1px 0 #bcbcbc;
+}
+
+.footer-bottom__text{
+	margin-bottom: 0;
+}
+
+.footer-bottom__text--template-author{
+	text-align: right;
 }
